@@ -1,17 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from 'react-dom';
+import 'lib-flexible';
+import { BrowserRouter } from 'react-router-dom';
+//引入字体
+import './assets/font/font_82ir9xlce4g/iconfont.css'
 
-ReactDOM.render(
-  <React.StrictMode>
+import App from './App.jsx';
+ReactDom.render(
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </BrowserRouter>,
+  document.querySelector('#root')
+)
