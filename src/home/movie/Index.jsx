@@ -19,17 +19,17 @@ class Index extends Component {
       {/* 顶部tab切换栏 */}
         <SelectBar />
       <Switch>
-        <Redirect from="/" to="/hot" exact></Redirect>
-        <Route path = '/hot'>
+        <Redirect from="/" to="/movie/hot" exact></Redirect>
+        <Route path = '/movie/hot'>
           <Hot></Hot>
         </Route>
-        <Route path = '/cinema'>
+        <Route path = '/movie/cinema'>
           <Cinema></Cinema>
         </Route>
-        <Route path = '/wait'>
+        <Route path = '/movie/wait'>
           <Wait></Wait>
         </Route>
-        <Route path = '/classict'>
+        <Route path = '/movie/classic'>
           <Classic></Classic>
         </Route>
       </Switch>

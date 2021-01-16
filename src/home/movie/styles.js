@@ -5,12 +5,11 @@ const SelectBarStyle = styled.div`
  display:flex;
  border-bottom:1px solid #333;
  .address{
-   /* width:90px; */
+   width:70px;
    display:flex;
    justify-content:center;
    align-items:center;
-   /* background:pink; */
-   flex:1;
+   font-size:14px;
  }
  ul {
     width: 240px;
@@ -21,23 +20,28 @@ const SelectBarStyle = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      background:pink;
       font-size:14px;
-      a{
-        background:red;
-      }
+    }
+    li:nth-last-child(1){
+      flex:1.5;
     }
   .active{
-      color:#e54847;
+      /* color:#e54847; */
+      height:44px;
+      line-height:44px;
+      font-size:17px;
+      font-weight:bolder;
+      border-bottom:2px solid #e54847;
     }
  }
  .search{
    display:flex;
-   /* width:45px; */
-   flex:1;
+   width:60px;
    justify-content:center;
    align-items:center;
-   /* background:lightblue; */
+   color:#e54847;
+   font-weight:bolder;
+   font-size:30px;
  }
 `
 export {

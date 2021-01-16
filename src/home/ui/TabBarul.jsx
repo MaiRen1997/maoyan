@@ -1,17 +1,18 @@
-import React, { Component }from 'react';
+import React, { Component,lazy,Suspense }from 'react';
 import { TabBar } from 'antd-mobile';
 
-// const Movie = lazy(() => import('./movie/Index'));
-// const Video = lazy(() => import('./video/Index'));
-// const Show = lazy(() => import('./show/Index'));
-// const Mine = lazy(() => import('./mine/Index'));
+const Movie = lazy(() => import('../movie/Index'));
+const Video = lazy(() => import('../video/Index'));
+const SmallVideo = lazy(() => import('../smallVideo/Index'));
+const Show = lazy(() => import('../show/Index'));
+const Mine = lazy(() => import('../mine/Index'));
 
 
 class TabBarul extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       // hidden: false,
       fullScreen: true,
     };
@@ -20,6 +21,7 @@ class TabBarul extends Component {
     return (
       <>
       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+      
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#f03d37"
@@ -45,7 +47,9 @@ class TabBarul extends Component {
             }}
             data-seed="logId"
           >
-   {/*          {this.renderContent('Life')} */}
+            <Suspense fallback={<div>loading..</div>}>
+              <Movie />
+            </Suspense>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -65,7 +69,9 @@ class TabBarul extends Component {
             }}
             data-seed="logId1"
           >
-          {/*   {this.renderContent('Koubei')} */}
+            <Suspense fallback={<div>loading..</div>}>
+              <Video />
+            </Suspense>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -84,7 +90,9 @@ class TabBarul extends Component {
               });
             }}
           >
-           {/*  {this.renderContent('Friend')} */}
+           <Suspense fallback={<div>loading..</div>}>
+              <SmallVideo />
+            </Suspense>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -102,7 +110,9 @@ class TabBarul extends Component {
               });
             }}
           >
-            {/* {this.renderContent('My')} */}
+            <Suspense fallback={<div>loading..</div>}>
+              <Show />
+            </Suspense>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -120,7 +130,9 @@ class TabBarul extends Component {
               });
             }}
           >
-            {/* {this.renderContent('My')} */}
+            <Suspense fallback={<div>loading..</div>}>
+              <Mine />
+            </Suspense>
           </TabBar.Item>
         </TabBar>
       </div>

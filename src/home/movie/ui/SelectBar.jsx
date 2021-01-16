@@ -38,7 +38,7 @@ class SelectBar extends Component {
           this.state.List.map(item=>{
             return (
                 <li key={item.title}>
-                  <NavLink to={ item.path }>
+                  <NavLink to={ '/movie'+item.path }>
                     { item.title }
                   </NavLink>   
                 </li>  
